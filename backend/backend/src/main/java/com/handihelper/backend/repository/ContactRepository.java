@@ -1,0 +1,10 @@
+package com.handihelper.backend.repository;
+
+import com.handihelper.backend.entity.Contact;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface ContactRepository extends JpaRepository<Contact, Long> {
+    List<Contact> findByProfileId(Long profileId);
+    List<Contact> findByProfileIdAndEstUrgenceTrue(Long profileId);
+}
